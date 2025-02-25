@@ -92,10 +92,10 @@ All backend functionality is managed through the **Noroff API**.
 ---
 
 ## 🎨 Design & Planning Resources
-- **Design Prototype:** [https://www.figma.com/design/j0LU1ujrDDU4uhFyqBTEHs/Untitled?node-id=43-1573&t=14EUQWT4QHucPMlE-0](#)
-- **Style Guide:** [https://www.figma.com/design/j0LU1ujrDDU4uhFyqBTEHs/Untitled?node-id=10-2&p=f&t=56yekcOCFxgGxKPS-0](#)
+- **Design Prototype:** [https://www.figma.com/design/j0LU1ujrDDU4uhFyqBTEHs/Untitled?node-id=43-1573&t=14EUQWT4QHucPMlE-0]
+- **Style Guide:** [https://www.figma.com/design/j0LU1ujrDDU4uhFyqBTEHs/Untitled?node-id=10-2&p=f&t=56yekcOCFxgGxKPS-0]
 - **Gantt Chart:** [https://trello.com/b/u5vUZh3S/my-work](#)
-- **Kanban Board:** [![alt text](image-2.png)](#) [https://trello.com/b/u5vUZh3S/my-work](#)
+- **Kanban Board:** [![alt text](image-2.png)](#) [https://trello.com/b/u5vUZh3S/my-work]
 
 ---
 
