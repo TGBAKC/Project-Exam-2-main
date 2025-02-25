@@ -142,27 +142,41 @@ const EditVenue = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     let token = localStorage.getItem("authToken");
     let apiKey = localStorage.getItem("apiKey");
-
+  
     if (!token || !apiKey) {
       alert("❌ Your session has expired. Please log in again.");
       navigate("/login");
       return;
     }
-
-    let mediaUrls = Array.isArray(venueData.media)
-      ? venueData.media.map(m => (typeof m === "string" ? m.trim() : m.url))
-      : venueData.media.split(",").map(url => url.trim());
-
+  
+    // ✅ `media` dizisini doğru formatta nesnelere çevir
+    let formattedMedia = Array.isArray(venueData.media)
+      ? venueData.media.map(m => (typeof m === "string" ? { url: m.trim() } : m))
+      : [];
+  
+    // ✅ `location` verisini eksiksiz gönder
     let locationData = venueData.location || {
       address: "",
       city: "",
       zip: "",
       country: "",
     };
-
+  
+    // ✅ API'ye gönderilecek JSON verisini oluştur
+    const dataToSend = {
+      name: venueData.name,
+      description: venueData.description,
+      price: Number(venueData.price),
+      maxGuests: Number(venueData.maxGuests),
+      media: formattedMedia, // `media` dizisini nesneler olarak gönderiyoruz
+      location: locationData,
+    };
+  
+    console.log("📤 API'ye Gönderilen Veri:", JSON.stringify(dataToSend, null, 2));
+  
     try {
       const response = await fetch(`https://v2.api.noroff.dev/holidaze/venues/${id}`, {
         method: "PUT",
@@ -171,32 +185,25 @@ const EditVenue = () => {
           "Authorization": `Bearer ${token}`,
           "X-Noroff-API-Key": apiKey,
         },
-        body: JSON.stringify({
-          name: venueData.name,
-          description: venueData.description,
-          price: Number(venueData.price),
-          maxGuests: Number(venueData.maxGuests),
-          media: mediaUrls,
-          location: locationData,
-        }),
+        body: JSON.stringify(dataToSend), // ✅ `dataToSend` JSON formatında
       });
-
+  
       const responseData = await response.json();
-
+  
       if (!response.ok) {
         alert(`❌ API Error: ${responseData.errors?.[0]?.message || "Unknown error"}`);
         return;
       }
-
+  
       alert("✅ Venue updated successfully!");
       navigate("/my-venues");
-
+  
     } catch (error) {
       console.error("❌ Error updating venue:", error);
       alert("❌ Something went wrong. Please try again.");
     }
   };
-
+  
   const handleDelete = async () => {
     const confirmDelete = window.confirm("⚠ Are you sure you want to delete this venue?");
     if (!confirmDelete) return;

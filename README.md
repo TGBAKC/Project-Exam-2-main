@@ -16,7 +16,7 @@ Holidaze is a modern, responsive accommodation booking web application developed
 - [Design & Planning Resources](#design--planning-resources)
 - [Setup & Installation](#setup--installation)
 - [Acknowledgements](#acknowledgements)
-- [Contact](#contact)
+
 
 ---
 
