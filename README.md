@@ -119,7 +119,7 @@ VITE_API_URL=<YOUR_API_BASE_URL>
 ```sh
   npm run dev
 ```
-The application should now be running on ****.
+The application should now be running on **https://holidaze-2.netlify.app/**.
 
 ### 🔹 **Build for Production**
 ```sh
@@ -129,5 +129,5 @@ The application should now be running on ****.
 ---
 
 ## 🙌 Acknowledgements
-Thank you to everyone who supported me throughout this project, including my mentors, peers, and the Noroff team.This project was developed as part of my frontend development studies. It represents my ability to build a complete, functional web application from scratch.
+Thank you to everyone who supported me throughout this project, including my mentors, peers, and the Noroff team.This project was developed as part of my frontend development studies. 
 
