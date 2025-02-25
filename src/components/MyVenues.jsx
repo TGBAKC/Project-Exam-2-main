@@ -12,15 +12,25 @@ const Container = styled.div`
 const Title = styled.h1`
   margin-bottom: 20px;
   color: ${({ $isDark }) => ($isDark ? "yellow" : "black")};
+  font-size: 28px;
+  text-align: center;
+  word-break: break-word;
+  max-width: 90%;
+  overflow-wrap: break-word;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+    padding: 0 15px;
+  }
 `;
 
 const VenueCard = styled.div`
   background: ${({ $isDark }) => ($isDark ? "#2d2d2d" : "#ffffff")};
   color: ${({ $isDark }) => ($isDark ? "white" : "black")};
-  padding: 25px;
+  padding: 20px;
   border-radius: 12px;
   margin: 20px auto;
-  max-width: 600px;
+  max-width: 90%;
   text-align: left;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
@@ -29,11 +39,22 @@ const VenueCard = styled.div`
     transform: translateY(-5px);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
   }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    font-size: 14px;
+  }
 `;
 
 const InfoText = styled.p`
   color: ${({ $isDark }) => ($isDark ? "#e0e0e0" : "#333333")};
   margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.4;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const Button = styled.button`
@@ -46,10 +67,16 @@ const Button = styled.button`
   margin: 10px;
   font-weight: 500;
   transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
 
   &:hover {
     background: linear-gradient(135deg, #0055aa, #0077cc);
     transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 10px 20px;
   }
 `;
 
@@ -62,7 +89,6 @@ const MyVenues = () => {
     document.body.classList.contains("dark-mode")
   );
 
-  // 🌙 Dark mode değişimlerini takip et
   useEffect(() => {
     const checkDarkMode = () => {
       setIsDarkMode(document.body.classList.contains("dark-mode"));
@@ -153,23 +179,11 @@ const MyVenues = () => {
               {venue.parking ? "Available" : "Not Available"}
             </InfoText>
             <InfoText $isDark={isDarkMode}>
-              <strong>🍽 Breakfast:</strong>{" "}
-              {venue.breakfast ? "Included" : "Not Included"}
-            </InfoText>
-            <InfoText $isDark={isDarkMode}>
               <strong>🐾 Pets:</strong> {venue.pets ? "Allowed" : "Not Allowed"}
             </InfoText>
             <InfoText $isDark={isDarkMode}>
               <strong>💰 Rate (€):</strong> {venue.price}
             </InfoText>
-            <InfoText $isDark={isDarkMode}>
-              <strong>📝 Description:</strong> {venue.description}
-            </InfoText>
-            <InfoText $isDark={isDarkMode}>
-              <strong>📅 Venue Created:</strong>{" "}
-              {new Date(venue.created).toLocaleDateString()}
-            </InfoText>
-
             <Button onClick={() => navigate(`/venues/${venue.id}/edit`)}>
               ✏️ Update Venue
             </Button>

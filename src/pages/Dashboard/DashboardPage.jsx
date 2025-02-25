@@ -7,6 +7,13 @@ import styled from "styled-components";
 const Container = styled.div`
   text-align: center;
   padding: 20px;
+  max-width: 600px;
+  margin: auto;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 15px;
+  }
 `;
 
 const AvatarContainer = styled.div`
@@ -21,6 +28,11 @@ const AvatarImage = styled.img`
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #ddd;
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 const EditIcon = styled(FontAwesomeIcon)`
@@ -32,26 +44,55 @@ const EditIcon = styled(FontAwesomeIcon)`
   padding: 5px;
   cursor: pointer;
   border: 1px solid #ddd;
+  font-size: 14px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    bottom: 3px;
+    right: 3px;
+  }
 `;
 
 const WelcomeMessage = styled.h3`
   color: #28a745;
   font-size: 22px;
   margin-top: 15px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const Button = styled.button`
   background-color: ${(props) => (props.primary ? "#EA6659" : "#28a745")};
   color: #fff;
-  padding: 10px 20px;
+  padding: 12px 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
   margin-top: 15px;
+  transition: background 0.3s ease, transform 0.2s ease;
 
   &:hover {
     background-color: ${(props) => (props.primary ? "#d6544f" : "#218838")};
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+`;
+
+const UserInfo = styled.p`
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+  word-wrap: break-word;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
   }
 `;
 
@@ -100,7 +141,6 @@ const DashboardPage = () => {
 
   return (
     <Container>
-  
       <h1 style={{ color: darkMode ? "white" : "black" }}>Dashboard</h1>
 
       <AvatarContainer>
@@ -124,15 +164,15 @@ const DashboardPage = () => {
         />
       </AvatarContainer>
 
-      <p>
+      <UserInfo>
         <strong>Username:</strong> {user?.name}
-      </p>
-      <p>
+      </UserInfo>
+      <UserInfo>
         <strong>Email:</strong> {user?.email}
-      </p>
-      <p>
+      </UserInfo>
+      <UserInfo>
         <strong>Venue Manager:</strong> {isVenueManager ? "Yes" : "No"}
-      </p>
+      </UserInfo>
 
       {!isVenueManager ? (
         <Button primary onClick={becomeVenueManager}>

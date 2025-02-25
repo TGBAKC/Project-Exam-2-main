@@ -53,44 +53,54 @@ const SearchBar = ({ onSearch }) => {
   );
 };
 
-// 📌 Genel Container
 const SearchContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 20px;
+  align-items: center;
+  flex-direction: column; 
+  padding: 15px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 1000px;
+  width: 90%; 
+  max-width: 900px; 
   margin: auto;
-`;
 
-// 📌 Büyük ekranda yatay, mobilde dikey düzen
-const Row = styled.div`
-  display: flex;
-  flex-wrap: wrap; /* Küçük ekranlarda iç içe girmeyi önler */
-  width: 100%;
-  gap: 18px; /* Inputlar arasındaki boşluğu artırdık */
- padding:2rem;
   @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 15px;
- 
- 
+    width: 95%; 
+    padding: 10px; 
+  }
+
+  @media (max-width: 480px) {
+    width: 100%; 
+    border-radius: 0; 
+    padding: 8px;
   }
 `;
 
-// 📌 Input Grupları
+
+const Row = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 100%;
+  gap: 12px;
+  padding: 1rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+`;
+
 const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  min-width: 180px; /* Daha geniş input kutuları */
-  margin-right: 15px; /* Sağ tarafta boşluk bırak */
-
-  &:last-child {
-    margin-right: 0; /* Son elemanda sağ boşluk olmasın */
+  min-width: 140px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
   }
 
   &.full-width {
@@ -98,22 +108,22 @@ const InputGroup = styled.div`
   }
 `;
 
-// 📌 Guests Container
 const GuestContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px;
+  gap: 8px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background: #fff;
   justify-content: center;
-  min-width: 120px;
+  min-width: 100px;
 `;
+
 
 const GuestInput = styled.input`
   border: none;
-  width: 50px;
+  width: 40px;
   text-align: center;
   font-size: 16px;
 
@@ -122,12 +132,11 @@ const GuestInput = styled.input`
   }
 `;
 
-// 📌 Buton Stili
 const SearchButton = styled.button`
   background-color: #e57373;
   color: white;
   border: none;
-  padding: 16px;
+  padding: 14px;
   font-size: 18px;
   cursor: pointer;
   border-radius: 5px;
@@ -136,7 +145,7 @@ const SearchButton = styled.button`
   justify-content: center;
   transition: background 0.3s;
   flex: 1;
-  min-width: 130px;
+  min-width: 100px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -147,14 +156,18 @@ const SearchButton = styled.button`
   }
 `;
 
-// 📌 Input Alanları
 const Input = styled.input`
-  padding: 14px; /* İç boşlukları büyüttük */
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
   width: 100%;
-  min-width: 180px; /* Daha iyi görünüm için genişlik artırıldı */
+  box-sizing: border-box; /* İç padding genişliği artırmaz */
+  min-width: 140px; 
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export default SearchBar;

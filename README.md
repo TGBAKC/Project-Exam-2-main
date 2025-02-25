@@ -1,6 +1,6 @@
 # 🌍 Holidaze - Accommodation Booking Platform
 
-![Screenshot](image.png)
+![Screenshot](image-1.png)!
 
 Holidaze is a modern, responsive accommodation booking web application developed as part of my final exam project in frontend development. This application serves both a **customer-facing side**—allowing users to browse and book holiday venues—and an **admin-facing side**—enabling venue managers to register, manage venues, and handle bookings.
 
@@ -92,10 +92,10 @@ All backend functionality is managed through the **Noroff API**.
 ---
 
 ## 🎨 Design & Planning Resources
-- **Design Prototype:** [View Prototype](#)
-- **Style Guide:** [View Style Guide](#)
-- **Gantt Chart:** [View Gantt Chart](#)
-- **Kanban Board:** [View Kanban Board](#)
+- **Design Prototype:** [https://www.figma.com/design/j0LU1ujrDDU4uhFyqBTEHs/Untitled?node-id=43-1573&t=14EUQWT4QHucPMlE-0](#)
+- **Style Guide:** [https://www.figma.com/design/j0LU1ujrDDU4uhFyqBTEHs/Untitled?node-id=10-2&p=f&t=56yekcOCFxgGxKPS-0](#)
+- **Gantt Chart:** [https://trello.com/b/u5vUZh3S/my-work](#)
+- **Kanban Board:** [![alt text](image-2.png)](#) [https://trello.com/b/u5vUZh3S/my-work](#)
 
 ---
 
@@ -119,7 +119,7 @@ VITE_API_URL=<YOUR_API_BASE_URL>
 ```sh
   npm run dev
 ```
-The application should now be running on **http://localhost:5173**.
+The application should now be running on ****.
 
 ### 🔹 **Build for Production**
 ```sh
@@ -130,10 +130,4 @@ The application should now be running on **http://localhost:5173**.
 
 ## 🙌 Acknowledgements
 Thank you to everyone who supported me throughout this project, including my mentors, peers, and the Noroff team.This project was developed as part of my frontend development studies. It represents my ability to build a complete, functional web application from scratch.
-
----
-
-## 📬 Contact
-[![Contact](image)](#)  
-For any questions or feedback, feel free to reach out! 🚀
 
