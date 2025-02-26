@@ -6,7 +6,7 @@ import Rating from "./Rating";
 import PropTypes from "prop-types";
 
 const VenueCardComponent = ({ venue }) => {
-  const isDarkMode = document.body.classList.contains("dark-mode"); // 🌙 Dark mode kontrolü
+  const isDarkMode = document.body.classList.contains("dark-mode"); 
 
   return (
     <Card to={`/venues/${venue.id}`} key={venue.id} $isDark={isDarkMode}>
@@ -89,7 +89,7 @@ const VenueInfo = styled.div`
 const VenueName = styled.p`
   font-size: 18px;
   font-weight: bold;
-  color: ${({ $isDark }) => ($isDark ? "black" : "white")}; /* 🌓 Dark mode'da siyah yap */
+  color: ${({ $isDark }) => ($isDark ? "white" : "black")}; /* ✅ Light mode'da siyah olacak */
 `;
 
 const DetailText = styled.p`

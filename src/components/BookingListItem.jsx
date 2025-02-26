@@ -110,7 +110,6 @@ const VenueName = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
-margin:auto;
 
   @media (max-width: 768px) {
     text-align: center;
