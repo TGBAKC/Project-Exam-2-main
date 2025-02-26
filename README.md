@@ -102,7 +102,7 @@ All backend functionality is managed through the **Noroff API**.
 ## 🏗 Setup & Installation
 ### 🔹 **Clone the Repository**
 ```sh
-  git clone https://github.com/yourusername/holidaze.git
+  git clone https://github.com/TGBAKC/Project-Exam-2-main.git
   cd holidaze
 ```
 ### 🔹 **Install Dependencies**
